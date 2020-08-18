@@ -1,0 +1,21 @@
+net: "examples/cifar10/2parts/brnlenet_train_val.prototxt.%"
+
+test_initialization: false
+test_iter: 100
+test_interval: 1000
+
+base_lr: 0.005
+lr_policy: "multistep"
+stepvalue: 32000
+stepvalue: 48000
+
+gamma: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+
+display: 100
+max_iter: 64000
+snapshot: 10000
+snapshot_prefix: "cifar10_brnlenet_2parts_bsp_s_5000_rs_20000_ds_20000_r_4_d_6_m_0.99__gc_10_skewdata_stat_lan/cifar_snapshot"
+solver_mode: GPU
+random_seed: 0

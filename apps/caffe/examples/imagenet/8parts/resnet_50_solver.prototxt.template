@@ -1,0 +1,17 @@
+net: "examples/imagenet/8parts/resnet_50.prototxt.%"
+test_iter: 195
+test_interval: 10000
+#test_interval: 2
+test_initialization: false
+display: 20
+average_loss: 20
+base_lr: 0.0125
+max_iter: 320000
+lr_policy: "poly"
+power: 1
+momentum: 0.9
+weight_decay: 0.0001
+random_seed: 1234568
+snapshot: 40000
+snapshot_prefix: "imagenet_resnet10_8parts_bsp_lr_0125_epoch_64_shuffledata_stat_lan/resnet_snapshot"
+solver_mode: GPU

@@ -1,0 +1,18 @@
+net: "examples/imagenet/1part/caffenet_train_val.prototxt.%"
+test_iter: 24
+test_interval: 1000
+test_initialization: false
+# base_lr: 0.01
+base_lr: 0.0036
+lr_policy: "step"
+gamma: 0.1
+stepsize: 100000
+display: 20
+max_iter: 50000000
+# max_iter: 40
+momentum: 0.9
+weight_decay: 0.000125
+random_seed: 12345678
+snapshot: 10000000
+snapshot_prefix: "examples/imagenet/1part/caffenet_snapshot"
+solver_mode: GPU

@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+# Create the imagenet lmdb inputs
+# N.B. set the path to the imagenet train + val data dirs
+
+# Set RESIZE=true to resize the images to 256x256. Leave as false if images have
+# already been resized using another tool.
+# RESIZE=false
+# if $RESIZE; then
+  # RESIZE_HEIGHT=256
+  # RESIZE_WIDTH=256
+# else
+  # RESIZE_HEIGHT=0
+  # RESIZE_WIDTH=0
+# fi
+
+# if [ ! -d "$TRAIN_DATA_ROOT" ]; then
+  # echo "Error: TRAIN_DATA_ROOT is not a path to a directory: $TRAIN_DATA_ROOT"
+  # echo "Set the TRAIN_DATA_ROOT variable in create_imagenet.sh to the path" \
+       # "where the ImageNet training data is stored."
+  # exit 1
+# fi
+
+# if [ ! -d "$VAL_DATA_ROOT" ]; then
+  # echo "Error: VAL_DATA_ROOT is not a path to a directory: $VAL_DATA_ROOT"
+  # echo "Set the VAL_DATA_ROOT variable in create_imagenet.sh to the path" \
+       # "where the ImageNet validation data is stored."
+  # exit 1
+# fi
+
+echo "Creating train lmdb..."
+
+GLOG_logtostderr=1 /users/hengganc/tank/LazyTable/applications/caffe/build/tools/convert_imageset \
+    /tank/projects/biglearning/hengganc/data/imagenet/train/ \
+    /panfs/probescratch/BigLearning/hengganc/data/imagenet/8parts_first20percent/train.shuffled.txt.% \
+    /panfs/probescratch/BigLearning/hengganc/data/imagenet/8parts_first20percent/train_lmdb.% \
+    2>&1 | tee /panfs/probescratch/BigLearning/hengganc/data/imagenet/output.txt.%
+
+# echo "Creating val lmdb..."
+
+# GLOG_logtostderr=1 build/tools/convert_imageset \
+    # /panfs/probescratch/BigLearning/hengganc/data/imagenet-all/all/ \
+    # /panfs/probescratch/BigLearning/hengganc/data/imagenet-all/8parts/val.shuffled.txt.% \
+    # /panfs/probescratch/BigLearning/hengganc/data/imagenet-all/8parts/val_lmdb.% \
+    # 2>&1 | tee /panfs/probescratch/BigLearning/hengganc/data/imagenet-all/output.txt.%
+
+echo "Done."

@@ -1,0 +1,5 @@
+num_channels=4
+slack=0
+gpu_memory_capacity=4500000000
+mm_warning_level=3
+layers_per_table=1

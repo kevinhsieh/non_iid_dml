@@ -1,0 +1,21 @@
+net: "examples/cifar10/5parts/resnet20_train_val.prototxt.%"
+
+test_initialization: false
+test_iter: 100
+test_interval: 1000
+
+base_lr: 0.002
+lr_policy: "multistep"
+gamma: 0.1
+stepvalue: 32000
+stepvalue: 48000
+
+momentum: 0.9
+weight_decay: 0.0005
+
+display: 100
+max_iter: 64000
+snapshot: 10000
+solver_mode: GPU
+snapshot_prefix: "cifar10_resnet20_5parts_fedavg_iter_4000_skeweddata_stat_lan/cifar_snapshot"
+random_seed: 0

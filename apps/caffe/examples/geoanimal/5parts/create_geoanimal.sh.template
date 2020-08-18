@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# Create the imagenet lmdb inputs
+# N.B. set the path to the imagenet train + val data dirs
+
+for data in shuffled skewed;
+do
+    for tv in train val;
+    do
+        GLOG_logtostderr=1 build/tools/convert_imageset \
+                        --resize_height=300 --resize_width=300 \
+                        /data/proj/geo_animal/ \
+                        /data/proj/geo_animal/5parts_${data}/${tv}.txt.% \
+                        /data/proj/geo_animal/5parts_${data}/${tv}_lmdb.% \
+                        2>&1 | tee /data/proj/geo_animal/convert_output.%                
+    done
+done

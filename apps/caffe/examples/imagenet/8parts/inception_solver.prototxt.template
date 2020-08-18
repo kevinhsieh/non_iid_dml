@@ -1,0 +1,20 @@
+net: "examples/imagenet/8parts/inception_train_val.prototxt.%"
+# test_iter: 1000
+test_iter: 125
+test_interval: 5000
+test_initialization: false
+snapshot_after_train: false
+display: 40
+average_loss: 40
+base_lr: 0.01
+lr_policy: "step"
+# stepsize: 6400
+stepsize: 800
+gamma: 1
+max_iter: 1200000
+momentum: 0.9
+weight_decay: 0.0002
+random_seed: 1234568
+snapshot: 20000
+snapshot_prefix: "examples/imagenet/8parts/inception_snapshot"
+solver_mode: GPU

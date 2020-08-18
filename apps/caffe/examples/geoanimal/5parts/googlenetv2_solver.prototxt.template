@@ -1,0 +1,16 @@
+net: "examples/geoanimal/5parts/googlenetv2_train_val.prototxt.%"
+test_iter: 230
+test_interval: 10000
+test_initialization: false
+display: 40
+average_loss: 40
+base_lr: 0.004
+lr_policy: "poly"
+power: 0.5
+max_iter: 240000
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 40000
+snapshot_prefix: "geoanimal_googlenetv2_5parts_gaia_th_0.20_lm_1_shuffleddata/googlenetv2_snapshot"
+solver_mode: GPU
+random_seed: 0

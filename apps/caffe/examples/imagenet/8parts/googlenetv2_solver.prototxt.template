@@ -1,0 +1,16 @@
+net: "examples/imagenet/8parts/googlenetv2.prototxt.%"
+test_iter: 195
+test_interval: 10000
+test_initialization: false
+display: 40
+average_loss: 40
+base_lr: 0.0025
+lr_policy: "poly"
+power: 0.5
+max_iter: 300000
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 40000
+snapshot_prefix: "imagenet_googlenetv2_8parts_dgc_epoch_10000_lm_0_dmm_0_skeweddata_stat_lan/resnet_snapshot"
+solver_mode: GPU
+random_seed: 0

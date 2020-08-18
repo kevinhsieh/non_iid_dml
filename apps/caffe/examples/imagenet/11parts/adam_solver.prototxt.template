@@ -1,0 +1,22 @@
+net: "examples/imagenet/8parts/adam_train_val.prototxt.%"
+test_iter: 125
+test_interval: 1000
+test_initialization: false
+# base_lr: 0.01
+# base_lr: 0.0036
+base_lr: 0.00125
+lr_policy: "step"
+gamma: 0.1
+stepsize: 100000
+# stepsize: 400000
+display: 20
+max_iter: 50000
+# max_iter: 40
+momentum: 0.9
+# weight_decay: 0.0005
+weight_decay: 0.00025
+# weight_decay: 0.000125
+random_seed: 12345678
+snapshot: 1000000
+snapshot_prefix: "examples/imagenet/8parts/caffenet_snapshot.%"
+solver_mode: GPU

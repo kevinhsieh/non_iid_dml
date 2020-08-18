@@ -1,0 +1,21 @@
+net: "examples/cifar10/5parts/alexnet_train_val.prototxt.%"
+
+test_initialization: false
+test_iter: 100
+test_interval: 1000
+
+base_lr: 0.0002
+lr_policy: "multistep"
+stepvalue: 32000
+stepvalue: 48000
+
+gamma: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+
+display: 100
+max_iter: 64000
+snapshot: 10000
+snapshot_prefix: "cifar10_alexnet_5parts_fedavg_iter_4000_skeweddata_stat_lan/cifar_snapshot"
+solver_mode: GPU
+random_seed: 0

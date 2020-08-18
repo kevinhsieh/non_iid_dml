@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+# This script converts the cifar data into leveldb format.
+
+
+for p in 20 40 60 80 100; do
+
+    OUTPUT=examples/cifar10/5parts/skewed_${p}
+    DATA=data/cifar10
+    DBTYPE=lmdb
+
+    echo "Creating $DBTYPE..."
+
+    mkdir -p ${OUTPUT}
+
+    rm -rf ${OUTPUT}/cifar10_train_lmdb.%
+    rm -rf ${OUTPUT}/cifar10_test_lmdb.%    
+
+    ./build/examples/cifar10/convert_partitioned_cifar_data_skew.bin $DATA $OUTPUT $DBTYPE 5 ${p} %
+
+    echo "Computing image mean..."
+
+    ./build/tools/compute_image_mean -backend=$DBTYPE $OUTPUT/cifar10_train_$DBTYPE.% $OUTPUT/mean.binaryproto.%
+
+    echo "Done."
+done

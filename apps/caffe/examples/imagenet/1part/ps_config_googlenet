@@ -1,0 +1,8 @@
+hostfile=examples/imagenet/8parts/machinefile
+num_channels=4
+slack=0
+thread_cache_capacity=0
+gpu_process_cache_capacity=-1
+gpu_local_storage_capacity=-1
+gpu_memory_capacity=8000000
+layers_per_table=10

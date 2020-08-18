@@ -1,0 +1,4 @@
+num_channels=4
+slack=0
+gpu_memory_capacity=4000000000
+layers_per_table=10

@@ -1,0 +1,23 @@
+net: "examples/casia/4parts/face_train_test.prototxt.%"
+test_iter: 100 
+test_interval: 100000
+test_initialization: false
+
+base_lr: 0.025
+lr_policy: "multistep"
+gamma: 0.1
+
+#iter_size: 1
+stepvalue: 16000
+stepvalue: 24000
+max_iter: 28000
+#max_iter: 10
+
+display: 100
+momentum: 0.9
+weight_decay: 0.0005
+random_seed: 0
+snapshot: 4000
+snapshot_prefix: "face_4parts_dgc_epoch_15084_lm_0_dmm_0_skeweddata_2dc_stat_lan/face_snapshot"
+
+solver_mode: GPU
