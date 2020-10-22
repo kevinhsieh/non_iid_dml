@@ -19,3 +19,5 @@ sudo apt-get install -y --force-yes python-skimage
 sudo apt-get install -y --force-yes python-h5py
 sudo apt-get install -y --force-yes python-matplotlib
 sudo apt-get install -y --force-yes openjdk-7-jre
+sudo cp /usr/include/hdf5/serial/* /usr/include/.
+sudo cp /usr/lib/x86_64-linux-gnu/hdf5/serial/* /usr/local/lib/.
